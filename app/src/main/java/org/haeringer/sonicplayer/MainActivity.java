@@ -1,5 +1,6 @@
 package org.haeringer.sonicplayer;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -66,14 +67,17 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(
             new NavigationView.OnNavigationItemSelectedListener() {
                 @Override
-                public boolean onNavigationItemSelected(MenuItem menuItem) {
-                    // set item as selected to persist highlight
-                    menuItem.setChecked(true);
+                public boolean onNavigationItemSelected(MenuItem item) {
                     // close drawer when item is tapped
                     mDrawerLayout.closeDrawers();
 
-                    // Add code here to update the UI based on the item selected
-                    // For example, swap UI fragments here
+                    int id = item.getItemId();
+
+                    if (id == R.id.nav_settings) {
+                        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                        startActivity(intent);
+                        return true;
+                    }
 
                     return true;
                 }
@@ -115,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_menu) {
+            //Something...
             return true;
         }
 
