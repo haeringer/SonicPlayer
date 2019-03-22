@@ -1,18 +1,18 @@
 package org.haeringer.sonicplayer
 
 import android.content.Intent
-import android.support.design.widget.NavigationView
-import android.support.design.widget.TabLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.tabs.TabLayout
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -25,12 +25,10 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     /**
-     * The [android.support.v4.view.PagerAdapter] that will provide
-     * fragments for each of the sections. We use a
-     * [FragmentPagerAdapter] derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * [android.support.v4.app.FragmentStatePagerAdapter].
+     * The PagerAdapter that will provide fragments for each of the sections.
+     * We use a FragmentPagerAdapter derivative, which will keep every loaded
+     * fragment in memory. If this becomes too memory intensive, it may be
+     * best to switch to a FragmentStatePagerAdapter.
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
